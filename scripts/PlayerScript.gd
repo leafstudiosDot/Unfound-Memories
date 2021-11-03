@@ -23,6 +23,24 @@ var esteem : float = 0.0 # Confidential
 
 # Game
 var loc_coord : Vector2 = Vector2()
-var facing : Vector2 = Vector2()
+var facing : Vector2 = Vector2() # Left and Right
 
 onready var rayCast = get_node("RayCast2D")
+
+func _physics_process(delta):
+	loc_coord = Vector2()
+	
+	# Inputs and Actions
+	if Input.is_action_pressed("playermove_up"):
+		loc_coord.y -= 1
+	
+	if Input.is_action_pressed("playermove_down"):
+		loc_coord.y += 1
+		
+	if Input.is_action_pressed("playermove_left"):
+		loc_coord.x -= 1
+		facing = Vector2(-1, 0)
+		
+	if Input.is_action_pressed("playermove_right"):
+		loc_coord.x += 1
+		facing = Vector2(1, 0)
