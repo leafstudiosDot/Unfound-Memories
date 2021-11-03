@@ -44,5 +44,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("playermove_right"):
 		loc_coord.x += 1
 		facing = Vector2(1, 0)
-		
+	
+	loc_coord.normalized()
+	
 	move_and_slide(loc_coord * moveSpeed)
