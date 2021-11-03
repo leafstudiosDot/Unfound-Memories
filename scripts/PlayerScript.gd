@@ -4,6 +4,7 @@ extends KinematicBody2D
 var level : int = 1
 var levelxp : int = 0 # (Level Int * 16 = levelxp)
 var karma : float = 0.0
+var moveSpeed : int = 150
 
 # Currency £
 var money : float = 20.0
@@ -19,3 +20,9 @@ var playTimeSeconds : int = 0.0 # Seconds
 var gender : String = "Male" # Gender, [ Male, Female ]
 var personality : String = "Normal" # Permanent Option at Save
 var esteem : float = 0.0 # Confidential
+
+# Game
+var loc_coord : Vector2 = Vector2()
+var facing : Vector2 = Vector2()
+
+onready var rayCast = get_node("RayCast2D")
