@@ -15,4 +15,4 @@ var playTimeSeconds : int = 0.0 # Seconds
 
 # Player Status
 var gender : String = "Male" # Gender, [ Male, Female ]
-var personality : String = "Normal"
+var personality : String = "Normal" # Permanent Option at Save
