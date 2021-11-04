@@ -30,3 +30,8 @@ enabled = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle_left = SubResource( 3 )
 anims/idle_right = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
