@@ -4,7 +4,8 @@ extends KinematicBody2D
 var level : int = 1
 var levelxp : int = 0 # (Level Int * 16 = levelxp)
 var karma : float = 0.0
-var moveSpeed : int = 150
+var moveSpeed : int = 15
+var speedBonus : int = 0
 
 # Currency £
 var money : float = 20.0
@@ -32,18 +33,23 @@ func _physics_process(delta):
 	
 	# Inputs and Actions
 	if Input.is_action_pressed("playermove_up"):
-		loc_coord.y -= 1
+		loc_coord.y -= moveSpeed + speedBonus
 	
 	if Input.is_action_pressed("playermove_down"):
-		loc_coord.y += 1
+		loc_coord.y += moveSpeed + speedBonus
 		
 	if Input.is_action_pressed("playermove_left"):
-		loc_coord.x -= 1
+		loc_coord.x -= moveSpeed + speedBonus
 		facing = Vector2(-1, 0)
 		
 	if Input.is_action_pressed("playermove_right"):
-		loc_coord.x += 1
+		loc_coord.x += moveSpeed + speedBonus
 		facing = Vector2(1, 0)
+		
+	if Input.is_action_pressed("sprint"):
+		speedBonus = 15
+	else:
+		speedBonus = 0
 	
 	loc_coord.normalized()
 	
