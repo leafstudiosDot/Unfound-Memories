@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 # Main Status
+var online = false
 var level : int = 1
 var levelxp : int = 0 # (Level Int * 16 = levelxp)
 var karma : float = 0.0
@@ -27,6 +28,13 @@ var loc_coord : Vector2 = Vector2()
 var facing : Vector2 = Vector2() # Left and Right
 
 onready var rayCast = get_node("RayCast2D")
+onready var playerNameLabel = get_node("Player_Name")
+
+func _ready():
+	if online:
+		playerNameLabel.show()
+	else:
+		playerNameLabel.hide()
 
 func _physics_process(delta):
 	loc_coord = Vector2()
