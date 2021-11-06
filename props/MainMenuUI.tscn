@@ -28,16 +28,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartLabel" type="Label" parent="."]
-margin_top = 490.0
-margin_right = 165.0
-margin_bottom = 510.0
-custom_fonts/font = ExtResource( 1 )
-text = "Press Space to Start"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Fade" type="Panel" parent="."]
 modulate = Color( 0, 0, 0, 0 )
 margin_right = 1280.0
@@ -48,3 +38,17 @@ __meta__ = {
 
 [node name="AnimationSet" type="AnimationPlayer" parent="."]
 anims/FadeOut = SubResource( 1 )
+
+[node name="StartLabel" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 64.3901
+margin_top = 39.7963
+margin_right = 653.39
+margin_bottom = 108.796
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 1 )
+text = "Press Space to Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
