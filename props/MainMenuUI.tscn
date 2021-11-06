@@ -1,54 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://fonts/MainFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/MainMenuUI.gd" type="Script" id=2]
-
-[sub_resource type="Animation" id=1]
-resource_name = "FadeOut"
-length = 0.5
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/path = NodePath("Fade:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
-}
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationSet" type="AnimationPlayer" parent="."]
-anims/FadeOut = SubResource( 1 )
-
-[node name="StartLabel" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 64.3901
-margin_top = 39.7963
-margin_right = 653.39
-margin_bottom = 108.796
-rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = ExtResource( 1 )
-text = "Press Space to Start"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Fade" type="Panel" parent="."]
-modulate = Color( 0, 0, 0, 0 )
-margin_right = 1280.0
-margin_bottom = 720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
