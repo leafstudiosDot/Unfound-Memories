@@ -10,8 +10,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
-
 func _on_Options_mouse_entered():
 	set_modulate(mouse_over)
 	get_parent().get_node("CanvasLayer/pointer2")._play()
