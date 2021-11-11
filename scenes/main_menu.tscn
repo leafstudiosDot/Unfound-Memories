@@ -113,7 +113,7 @@ current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="UI" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -121,10 +121,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationSet" type="AnimationPlayer" parent="CanvasLayer/Control"]
+[node name="AnimationSet" type="AnimationPlayer" parent="CanvasLayer/UI"]
 anims/FadeOut = SubResource( 3 )
 
-[node name="Fade" type="Panel" parent="CanvasLayer/Control"]
+[node name="Fade" type="Panel" parent="CanvasLayer/UI"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = -4.00452
 margin_top = -1.05945
@@ -134,7 +134,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="RichTextLabel" parent="CanvasLayer/Control"]
+[node name="MenuItems" type="Control" parent="CanvasLayer/UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="RichTextLabel" parent="CanvasLayer/UI/MenuItems"]
 margin_left = 561.06
 margin_top = 364.178
 margin_right = 717.06
@@ -148,7 +155,7 @@ __meta__ = {
 mouse_over = Color( 0, 1, 0.0392157, 1 )
 mouse_out = Color( 1, 1, 1, 1 )
 
-[node name="Options" type="RichTextLabel" parent="CanvasLayer/Control"]
+[node name="Options" type="RichTextLabel" parent="CanvasLayer/UI/MenuItems"]
 margin_left = 584.0
 margin_top = 418.0
 margin_right = 696.0
@@ -162,7 +169,7 @@ __meta__ = {
 mouse_over = Color( 0, 1, 0.0392157, 1 )
 mouse_out = Color( 1, 1, 1, 1 )
 
-[node name="Title" type="RichTextLabel" parent="CanvasLayer/Control"]
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/UI"]
 margin_left = 414.0
 margin_top = 90.0
 margin_right = 887.0
@@ -174,27 +181,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+[node name="Timer" type="Timer" parent="CanvasLayer/UI"]
 wait_time = 0.077
 autostart = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/Control"]
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/UI"]
 
-[node name="pointer" type="Sprite" parent="CanvasLayer/Control/CanvasLayer"]
+[node name="pointer" type="Sprite" parent="CanvasLayer/UI/CanvasLayer"]
 position = Vector2( -73.9564, 362.697 )
 scale = Vector2( 0.0723613, 0.0682228 )
 texture = ExtResource( 7 )
 offset = Vector2( 8373.03, 256 )
 script = ExtResource( 9 )
 
-[node name="pointer2" type="Sprite" parent="CanvasLayer/Control/CanvasLayer"]
+[node name="pointer2" type="Sprite" parent="CanvasLayer/UI/CanvasLayer"]
 position = Vector2( 558.147, 433.352 )
 scale = Vector2( 0.0811405, 0.077002 )
 texture = ExtResource( 7 )
 script = ExtResource( 9 )
 
-[connection signal="mouse_entered" from="CanvasLayer/Control/Start" to="CanvasLayer/Control/Start" method="_on_Start_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Control/Start" to="CanvasLayer/Control/Start" method="_on_Start_mouse_exited"]
-[connection signal="mouse_entered" from="CanvasLayer/Control/Options" to="CanvasLayer/Control/Options" method="_on_Options_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Control/Options" to="CanvasLayer/Control/Options" method="_on_Options_mouse_exited"]
-[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control/Title" method="_on_Timer_timeout"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/MenuItems/Start" to="CanvasLayer/UI/MenuItems/Start" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UI/MenuItems/Start" to="CanvasLayer/UI/MenuItems/Start" method="_on_Start_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/MenuItems/Options" to="CanvasLayer/UI/MenuItems/Options" method="_on_Options_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UI/MenuItems/Options" to="CanvasLayer/UI/MenuItems/Options" method="_on_Options_mouse_exited"]
+[connection signal="timeout" from="CanvasLayer/UI/Timer" to="CanvasLayer/UI/Title" method="_on_Timer_timeout"]

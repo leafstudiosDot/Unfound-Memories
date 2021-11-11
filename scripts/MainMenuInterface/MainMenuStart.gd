@@ -11,11 +11,11 @@ func _ready():
 
 func _on_Start_mouse_entered():
 	set_modulate(mouse_over)
-	get_parent().get_node("CanvasLayer/pointer")._play()
+	get_parent().get_node("../CanvasLayer/pointer")._play()
 	pass # Replace with function body.
 
 
 func _on_Start_mouse_exited():
 	set_modulate(mouse_out)
-	get_parent().get_node("CanvasLayer/pointer")._ready()
+	get_parent().get_node("../CanvasLayer/pointer")._ready()
 	pass # Replace with function body.
