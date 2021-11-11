@@ -19,3 +19,8 @@ func _on_Start_mouse_exited():
 	set_modulate(mouse_out)
 	get_parent().get_node("../CanvasLayer/pointer")._ready()
 	pass # Replace with function body.
+
+func _on_Start_gui_input(event):
+	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):
+		print("Started a Game")
+	pass
