@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/DialogBox.png" type="Texture" id=1]
+[ext_resource path="res://fonts/MainFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/prototype/Dialogue.gd" type="Script" id=3]
 [ext_resource path="res://scenes/prototype/Text.gd" type="Script" id=4]
 
@@ -22,15 +23,19 @@ __meta__ = {
 [node name="Name" type="RichTextLabel" parent="CanvasLayer/Dialoguebox"]
 margin_left = 72.0
 margin_top = 48.0
-margin_right = 144.0
-margin_bottom = 80.0
+margin_right = 920.0
+margin_bottom = 130.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/normal_font = ExtResource( 2 )
 text = "???"
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/Dialoguebox"]
 margin_left = 64.0
 margin_top = 88.0
-margin_right = 760.0
-margin_bottom = 160.0
+margin_right = 2398.0
+margin_bottom = 332.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/normal_font = ExtResource( 2 )
 text = "Text"
 script = ExtResource( 4 )
 __meta__ = {

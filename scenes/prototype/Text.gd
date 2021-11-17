@@ -3,7 +3,7 @@ extends RichTextLabel
 
 var dialogue = ["Honeyy? What would you like for breakfast? Toast? Bacon? Or do you want me to pour in the whole nine yards?",
 "Oh you want it all? Of course, anything for you honey~",
-"..."]
+"Add something here will ya :D"]
 var page = 0
 
 
@@ -15,7 +15,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton or InputEventKey:
 		if event.is_pressed():
 			if visible_characters > get_total_character_count():
 				set_visible_characters(0)
@@ -29,5 +29,5 @@ func _input(event):
 
 
 func _on_Timer_timeout():
-	set_visible_characters(get_visible_characters()+1)
+	set_visible_characters(get_visible_characters()+3)
 	pass # Replace with function body.

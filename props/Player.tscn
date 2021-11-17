@@ -8,12 +8,11 @@
 radius = 33.1649
 height = 0.565971
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "idle_left"
 loop = true
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle_right"
+[sub_resource type="Animation" id=3]
 loop = true
 
 [node name="Player" type="KinematicBody2D"]
@@ -29,8 +28,8 @@ texture = ExtResource( 1 )
 enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle_left = SubResource( 3 )
-anims/idle_right = SubResource( 2 )
+anims/idle_left = SubResource( 2 )
+anims/idle_right = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
