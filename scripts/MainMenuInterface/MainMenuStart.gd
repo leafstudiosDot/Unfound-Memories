@@ -22,5 +22,6 @@ func _on_Start_mouse_exited():
 
 func _on_Start_gui_input(event):
 	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):
+		get_tree().change_scene("res://scenes/Gender Selection.tscn")
 		print("Started a Game")
 	pass
