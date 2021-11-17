@@ -17,11 +17,15 @@ func _ready():
 
 func _on_Male_mouse_entered():
 	set_modulate(mouse_over)
-	set_scale(Vector2(1.15,1.15))
 	pass # Replace with function body.
 
 
 func _on_Male_mouse_exited():
 	set_modulate(mouse_out)
-	set_scale(Vector2(1,1))
+	pass # Replace with function body.
+
+
+func _on_Male_gui_input(event):
+	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):
+		print("Picked Male")
 	pass # Replace with function body.

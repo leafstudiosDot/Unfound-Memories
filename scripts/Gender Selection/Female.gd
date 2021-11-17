@@ -17,13 +17,11 @@ func _ready():
 
 func _on_Female_mouse_entered():
 	set_modulate(mouse_over)
-	set_scale(Vector2(1.15,1.15))
 	pass # Replace with function body.
 
 
 func _on_Female_mouse_exited():
 	set_modulate(mouse_out)
-	set_scale(Vector2(1,1))
 	pass # Replace with function body.
 
 

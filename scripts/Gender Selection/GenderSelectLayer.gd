@@ -17,9 +17,3 @@ func text_fade_in():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Male_gui_input(event):
-	if (event is InputEventMouseButton && event.pressed):
-		print("Picked Male")
-	pass # Replace with function body.
