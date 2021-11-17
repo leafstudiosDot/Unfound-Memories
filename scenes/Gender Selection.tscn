@@ -90,7 +90,6 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 1278.0
 margin_bottom = 718.0
