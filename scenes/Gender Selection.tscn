@@ -1,16 +1,15 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://fonts/arlrdbd.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scenes/CanvasLayer.gd" type="Script" id=2]
-[ext_resource path="res://scenes/Female.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Male.gd" type="Script" id=4]
+[ext_resource path="res://scripts/MainMenuInterface/CanvasLayer.gd" type="Script" id=2]
+[ext_resource path="res://scripts/MainMenuInterface/Female.gd" type="Script" id=3]
+[ext_resource path="res://scripts/MainMenuInterface/Male.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 47
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "Fade_In"
+[sub_resource type="Animation" id=2]
 length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Gender Selection:modulate")
@@ -73,7 +72,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 41
 font_data = ExtResource( 1 )
 
@@ -81,7 +80,7 @@ font_data = ExtResource( 1 )
 size = 45
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -109,7 +108,7 @@ margin_left = -248.0
 margin_top = -296.0
 margin_right = 248.0
 margin_bottom = -232.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
 text = "GENDER SELECTION"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,7 +116,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../ColorRect")
-anims/Fade_In = SubResource( 1 )
+anims/Fade_In = SubResource( 2 )
 
 [node name="Female" type="RichTextLabel" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
@@ -125,7 +124,7 @@ margin_left = 704.0
 margin_top = 336.0
 margin_right = 896.0
 margin_bottom = 392.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "FEMALE"
 script = ExtResource( 3 )
 __meta__ = {
@@ -159,7 +158,7 @@ margin_left = -24.0
 margin_top = -22.0
 margin_right = 24.0
 margin_bottom = 22.0
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 5 )
 text = "or"
 __meta__ = {
 "_edit_use_anchors_": false

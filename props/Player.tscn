@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://scripts/PlayerScript.gd" type="Script" id=2]
+[ext_resource path="res://scripts/MainMenuInterface/PlayerScript.gd" type="Script" id=2]
 [ext_resource path="res://fonts/MainFont.tres" type="DynamicFont" id=3]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 33.1649
