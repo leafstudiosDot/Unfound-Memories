@@ -43,7 +43,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Dialoguebox"]
-wait_time = 0.05
+wait_time = 0.02
 autostart = true
 
 [connection signal="timeout" from="CanvasLayer/Dialoguebox/Timer" to="CanvasLayer/Dialoguebox/Text" method="_on_Timer_timeout"]
