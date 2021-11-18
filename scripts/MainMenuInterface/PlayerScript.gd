@@ -35,6 +35,13 @@ onready var playerNameLabel = get_node("Player_Name")
 func _ready():
 	$AnimationPlayer.play("idle_right")
 	
+	if female:
+		get_node( "Sprite_Male" ).visible = false
+		get_node( "Sprite_Female" ).visible = true
+	else:
+		get_node( "Sprite_Male" ).visible = true
+		get_node( "Sprite_Female" ).visible = false
+	
 	if online:
 		playerNameLabel.show()
 	else:
@@ -44,6 +51,7 @@ func _physics_process(delta):
 	loc_coord = Vector2()
 	
 	get_node( "Sprite_Male" ).set_flip_h( flipped )
+	get_node( "Sprite_Female" ).set_flip_h( flipped )
 	
 	# Inputs and Actions
 	if Input.is_action_pressed("playermove_up"):
