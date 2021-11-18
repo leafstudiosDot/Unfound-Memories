@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://scripts/PlayerScript.gd" type="Script" id=2]
+[ext_resource path="res://scripts/MainMenuInterface/PlayerScript.gd" type="Script" id=2]
 [ext_resource path="res://fonts/MainFont.tres" type="DynamicFont" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -9,10 +9,9 @@ radius = 33.1649
 height = 0.565971
 
 [sub_resource type="Animation" id=3]
-resource_name = "idle_left"
 loop = true
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 resource_name = "idle_right"
 loop = true
 
@@ -30,7 +29,7 @@ enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle_left = SubResource( 3 )
-anims/idle_right = SubResource( 2 )
+anims/idle_right = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
