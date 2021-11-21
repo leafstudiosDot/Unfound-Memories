@@ -1,13 +1,34 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/DialogBox.png" type="Texture" id=1]
 [ext_resource path="res://fonts/MainFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/prototype/Dialogue.gd" type="Script" id=3]
 [ext_resource path="res://scenes/prototype/Text.gd" type="Script" id=4]
+[ext_resource path="res://scenes/prototype/DialogueIntro.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+"anims/Fade in" = SubResource( 1 )
 
 [node name="Dialoguebox" type="NinePatchRect" parent="CanvasLayer"]
 margin_left = 208.0
@@ -46,4 +67,17 @@ __meta__ = {
 wait_time = 0.02
 autostart = true
 
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="CanvasLayer/Dialoguebox/Timer" to="CanvasLayer/Dialoguebox/Text" method="_on_Timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer/Dialoguebox" method="_on_Timer_timeout"]
