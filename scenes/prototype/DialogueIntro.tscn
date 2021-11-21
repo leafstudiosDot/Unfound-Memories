@@ -49,6 +49,9 @@ margin_bottom = 130.0
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/normal_font = ExtResource( 2 )
 text = "???"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/Dialoguebox"]
 margin_left = 64.0
