@@ -155,7 +155,7 @@ __meta__ = {
 anims/FadeOut = SubResource( 3 )
 
 [node name="Fade" type="Panel" parent="CanvasLayer/UI"]
-modulate = Color( 0, 0, 0, 1 )
+modulate = Color( 0, 0, 0, 0 )
 margin_left = -4.00452
 margin_top = -1.05945
 margin_right = 1276.0
