@@ -12,6 +12,7 @@ onready var endOfLines = get_node("/root/Node2D/CanvasLayer/Dialoguebox")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	set_process_input(false)
 	print(arraySize)
 	pass # Replace with function body.
