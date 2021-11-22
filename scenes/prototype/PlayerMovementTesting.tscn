@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://props/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://bgm/Thank you cloud family.mp3" type="AudioStream" id=3]
 [ext_resource path="res://scenes/prototype/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/prototype/Sword.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="ItemWeapon" parent="." instance=ExtResource( 5 )]
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1.8877, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 704.13, -3.77545 )
+position = Vector2( 304, 136 )
 z_index = 90
 
 [node name="Sprite" type="Sprite" parent="."]
