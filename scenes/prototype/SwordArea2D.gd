@@ -29,3 +29,8 @@ func _input(event):
 		weaponEquiped = true
 		set_process_input(false)
 		print("Weapon Equiped")
+
+
+func _on_Area2D_body_exited(body):
+	text.visible = false
+	pass # Replace with function body.

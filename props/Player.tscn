@@ -11,7 +11,7 @@
 radius = 33.1649
 height = 0.565971
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Attack"
 length = 0.4
 tracks/0/type = "value"
@@ -39,11 +39,10 @@ tracks/1/keys = {
 "values": [ 2, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 loop = true
 
-[sub_resource type="Animation" id=3]
-resource_name = "idle_right"
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite_Male:frame")
@@ -70,8 +69,7 @@ tracks/1/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "walk_right"
+[sub_resource type="Animation" id=5]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite_Male:frame")
@@ -98,7 +96,7 @@ tracks/1/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 20.5821, 48 )
 
 [sub_resource type="RectangleShape2D" id=7]
@@ -118,10 +116,10 @@ texture = ExtResource( 1 )
 enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Attack = SubResource( 6 )
-anims/idle_left = SubResource( 2 )
-anims/idle_right = SubResource( 3 )
-anims/walk_right = SubResource( 4 )
+anims/Attack = SubResource( 2 )
+anims/idle_left = SubResource( 3 )
+anims/idle_right = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -165,7 +163,7 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitboxRight"]
 position = Vector2( 53.5, -0.5 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="AttackHitboxLeft" type="Area2D" parent="." groups=[
 "Sword",
@@ -176,6 +174,7 @@ position = Vector2( -54.5, 0 )
 shape = SubResource( 7 )
 
 [node name="SwordSwingingRight" type="Sprite" parent="."]
+visible = false
 position = Vector2( 14.7726, 5.60435 )
 scale = Vector2( 0.192061, 0.192547 )
 texture = ExtResource( 6 )
@@ -183,6 +182,7 @@ hframes = 3
 frame = 2
 
 [node name="SwordSwingingLeft" type="Sprite" parent="."]
+visible = false
 position = Vector2( -13.2274, 6.60435 )
 scale = Vector2( 0.192061, 0.192547 )
 texture = ExtResource( 6 )
