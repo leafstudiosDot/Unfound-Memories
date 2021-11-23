@@ -27,10 +27,22 @@ texture = ExtResource( 2 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 88, 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -88, -24 )
 shape = SubResource( 3 )
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -36.4097
+margin_top = -58.5199
+margin_right = 51.5903
+margin_bottom = -34.5199
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_Area2D_body_shape_exited"]

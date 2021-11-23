@@ -11,10 +11,9 @@
 [node name="ItemWeapon" parent="." instance=ExtResource( 5 )]
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1.8877, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 136 )
+position = Vector2( 576, -56 )
 z_index = 90
 
 [node name="Sprite" type="Sprite" parent="."]

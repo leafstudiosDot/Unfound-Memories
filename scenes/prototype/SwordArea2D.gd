@@ -8,7 +8,7 @@ var weaponEquiped = false
 func _ready():
 	text.visible = false
 	visible = true
-	print(weaponEquiped)
+	print("Weapon not Equiped")
 	set_process_input(false)
 	pass # Replace with function body.
 
@@ -28,4 +28,4 @@ func _input(event):
 		visible = false
 		weaponEquiped = true
 		set_process_input(false)
-		print(weaponEquiped)
+		print("Weapon Equiped")

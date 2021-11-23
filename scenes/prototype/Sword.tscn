@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/Weapon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/prototype/SwordArea2D.gd" type="Script" id=2]
+[ext_resource path="res://scenes/prototype/ItemWeapon.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 19 )
 
 [node name="ItemWeapon" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 6.10352e-05, 0 )
-scale = Vector2( 1, 1 )
 script = ExtResource( 2 )
 
 [node name="Weapon" type="Sprite" parent="Area2D"]
