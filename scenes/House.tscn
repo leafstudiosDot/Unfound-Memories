@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://sprites/Main Scene Objects/Broken Plank Floor.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Main Scene Objects/Plank Floor.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://sprites/Main Scene Objects/wood wall.png" type="Texture" id=7]
 [ext_resource path="res://sprites/Main Scene Objects/Tile Floor.png" type="Texture" id=8]
 [ext_resource path="res://sprites/Main Scene Objects/Bathroom Tile.png" type="Texture" id=9]
-[ext_resource path="res://scenes/prototype/PlayerMovementTesting.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Door.gd" type="Script" id=11]
 [ext_resource path="res://sprites/Main Scene Objects/wooden door frame.png" type="Texture" id=12]
 
@@ -276,9 +275,6 @@ shape = SubResource( 2 )
 position = Vector2( 928, 320 )
 rotation = 3.14159
 shape = SubResource( 3 )
-
-[node name="Node2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 136, 248 )
 
 [node name="wooden door frame" type="Sprite" parent="."]
 position = Vector2( 488, 152 )
