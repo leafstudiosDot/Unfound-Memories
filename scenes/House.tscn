@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/Main Scene Objects/Broken Plank Floor.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Main Scene Objects/Plank Floor.png" type="Texture" id=2]
@@ -9,8 +9,11 @@
 [ext_resource path="res://sprites/Main Scene Objects/wood wall.png" type="Texture" id=7]
 [ext_resource path="res://sprites/Main Scene Objects/Tile Floor.png" type="Texture" id=8]
 [ext_resource path="res://sprites/Main Scene Objects/Bathroom Tile.png" type="Texture" id=9]
+[ext_resource path="res://scenes/prototype/PlayerMovementTesting.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Door.gd" type="Script" id=11]
 [ext_resource path="res://sprites/Main Scene Objects/wooden door frame.png" type="Texture" id=12]
+[ext_resource path="res://scenes/House.gd" type="Script" id=13]
+[ext_resource path="res://icon.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 736, 72 )
@@ -26,7 +29,11 @@ b = Vector2( 96, -3.05176e-05 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 2612.76, 2939.77 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 32 )
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 13 )
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -45,7 +52,6 @@ texture = ExtResource( 8 )
 
 [node name="Tile Floor2" type="Sprite" parent="Bathroom Floor"]
 position = Vector2( -23310, -7886.84 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 8 )
 offset = Vector2( 23310, 3680.53 )
 
@@ -56,22 +62,18 @@ texture = ExtResource( 7 )
 
 [node name="wood wall3" type="Sprite" parent="wood wall"]
 position = Vector2( 19997, 0 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="wood wall4" type="Sprite" parent="wood wall"]
 position = Vector2( -0.000488281, -3257.81 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="wood wall5" type="Sprite" parent="wood wall"]
 position = Vector2( 9998.5, -3257.81 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="wood wall6" type="Sprite" parent="wood wall"]
 position = Vector2( 19997, -3257.81 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="wood wall2" type="Sprite" parent="."]
@@ -122,7 +124,6 @@ texture = ExtResource( 2 )
 
 [node name="Plank Floor2" type="Sprite" parent="Plank Floor"]
 position = Vector2( -19980, 0.00195313 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="Plank Floor4" type="Sprite" parent="Plank Floor"]
@@ -166,7 +167,6 @@ texture = ExtResource( 2 )
 
 [node name="Plank Floor2" type="Sprite" parent="Plank Floor2"]
 position = Vector2( -19980, 0.00195313 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="Plank Floor4" type="Sprite" parent="Plank Floor2"]
@@ -217,27 +217,22 @@ texture = ExtResource( 9 )
 
 [node name="Bathroom Tile6" type="Sprite" parent="Bathroom Tile"]
 position = Vector2( 4965.89, -4206.31 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 
 [node name="Bathroom Tile5" type="Sprite" parent="Bathroom Tile"]
 position = Vector2( 0.0078125, -4206.31 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 
 [node name="Bathroom Tile3" type="Sprite" parent="Bathroom Tile"]
 position = Vector2( 0.0078125, -2103.16 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 
 [node name="Bathroom Tile2" type="Sprite" parent="Bathroom Tile"]
 position = Vector2( 4965.89, 0.00195313 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 
 [node name="Bathroom Tile4" type="Sprite" parent="Bathroom Tile"]
 position = Vector2( 4965.89, -2103.16 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -282,11 +277,27 @@ rotation = 1.74846e-07
 scale = Vector2( 0.0183714, 0.0136065 )
 texture = ExtResource( 12 )
 
-[node name="Area2D" type="Area2D" parent="wooden door frame"]
+[node name="Area2D" type="Area2D" parent="wooden door frame" groups=[
+"Door",
+]]
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wooden door frame/Area2D"]
 shape = SubResource( 4 )
 
+[node name="MirrorPrototype" type="Sprite" parent="."]
+position = Vector2( 904, 136 )
+texture = ExtResource( 14 )
+
+[node name="Area2D" type="Area2D" parent="MirrorPrototype"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MirrorPrototype/Area2D"]
+shape = SubResource( 5 )
+
+[node name="Node2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 448, 240 )
+
 [connection signal="body_entered" from="wooden door frame/Area2D" to="wooden door frame/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="wooden door frame/Area2D" to="wooden door frame/Area2D" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="MirrorPrototype/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="MirrorPrototype/Area2D" to="." method="_on_Area2D_body_exited"]
