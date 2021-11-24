@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 var player = null
 var move = Vector2.ZERO
-var speed = 1
+var speed = 0.5
 var healthPoints = 100
 onready var healthLabel = get_node("RichTextLabel")
 
