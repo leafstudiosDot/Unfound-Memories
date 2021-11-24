@@ -51,6 +51,7 @@ func _on_HitBox_area_entered(area):
 		healthPoints -= 20
 		healthLabel.bbcode_text = "Health: " + str(healthPoints)
 		print("Enemy HP: " + str(healthPoints))
+		$HurtSound.play()
 		if healthPoints <= 0:
 			print("Enemy Dead")
 			Dead = true
