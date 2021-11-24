@@ -20,7 +20,6 @@ var playTimeSeconds : int = 0.0 # Seconds
 
 
 # Player Status
-var gender : String = "Male" # Gender, [ Male, Female ]
 var personality : String = "Normal" # Permanent Option at Save
 var esteem : float = 0.0 # Confidential
 # Game
@@ -96,8 +95,10 @@ func _physics_process(delta):
 		speedBonus = 0
 	
 	if Input.is_key_pressed(KEY_X) && flipped == false && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
-		spriteMale.visible = false
-		spriteFemale.visible = false
+		if female:
+			get_node( "Sprite_Female" ).visible = false
+		else:
+			spriteMale.visible = false
 		set_physics_process(false)
 		if female:
 			swordAnimationRight_F.visible = true
@@ -106,7 +107,10 @@ func _physics_process(delta):
 		$AttackHitboxRight/CollisionShape2D.disabled = false
 		$AnimationPlayer.play("Attack")
 	if Input.is_key_pressed(KEY_X) && flipped == true && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
-		spriteMale.visible = false
+		if female:
+			get_node( "Sprite_Female" ).visible = false
+		else:
+			spriteMale.visible = false
 		set_physics_process(false)
 		if female:
 			swordAnimationLeft_F.visible = true
@@ -121,9 +125,11 @@ func _physics_process(delta):
 
 func _on_AnimationPlayer_animation_finished(Attack):
 	if female:
-		spriteFemale.visible = true
+		get_node( "Sprite_Female" ).visible = true
+		spriteMale.visible = false
 	else:
 		spriteMale.visible = true
+		get_node( "Sprite_Female" ).visible = false
 	
 	swordAnimationLeft.visible = false
 	swordAnimationRight.visible = false
