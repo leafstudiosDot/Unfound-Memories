@@ -1,0 +1,253 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/Main Scene Objects/Road.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Main Scene Objects/Road V2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Main Scene Objects/Houses.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Main Scene Objects/Barricade.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Main Scene Objects/Electric Pole.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 200 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 80, 24 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 1360, 424 )
+b = Vector2( -8, 424 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0.698039, 0.105882, 0.105882, 1 )
+margin_left = -2040.0
+margin_top = -944.0
+margin_right = 3400.0
+margin_bottom = 2216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+modulate = Color( 0.698039, 0.105882, 0.105882, 1 )
+margin_left = -1768.0
+margin_top = -872.0
+margin_right = 3672.0
+margin_bottom = 2288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Houses" type="Sprite" parent="."]
+position = Vector2( 192, 384 )
+scale = Vector2( 2.98438, 2.73438 )
+texture = ExtResource( 4 )
+
+[node name="Houses4" type="Sprite" parent="Houses"]
+position = Vector2( 375.288, 1.52588e-05 )
+texture = ExtResource( 4 )
+
+[node name="Houses2" type="Sprite" parent="Houses"]
+position = Vector2( 123.309, 1.52588e-05 )
+texture = ExtResource( 4 )
+
+[node name="Houses3" type="Sprite" parent="Houses"]
+position = Vector2( 251.979, 1.52588e-05 )
+texture = ExtResource( 4 )
+
+[node name="Electric Pole" type="Sprite" parent="."]
+position = Vector2( 96, 392 )
+scale = Vector2( 1.6875, 1.6875 )
+texture = ExtResource( 6 )
+
+[node name="Electric Pole6" type="Sprite" parent="Electric Pole"]
+position = Vector2( 597.333, 0 )
+texture = ExtResource( 6 )
+
+[node name="Electric Pole5" type="Sprite" parent="Electric Pole"]
+position = Vector2( 474.074, 3.05176e-05 )
+texture = ExtResource( 6 )
+
+[node name="Electric Pole4" type="Sprite" parent="Electric Pole"]
+position = Vector2( 360.296, 0 )
+texture = ExtResource( 6 )
+
+[node name="Electric Pole3" type="Sprite" parent="Electric Pole"]
+position = Vector2( 251.259, 0 )
+texture = ExtResource( 6 )
+
+[node name="Electric Pole2" type="Sprite" parent="Electric Pole"]
+position = Vector2( 123.259, 3.05176e-05 )
+texture = ExtResource( 6 )
+
+[node name="Electric Pole7" type="Sprite" parent="Electric Pole"]
+position = Vector2( 715.852, 3.05176e-05 )
+texture = ExtResource( 6 )
+
+[node name="Road" type="Sprite" parent="."]
+position = Vector2( 128, 688 )
+scale = Vector2( 2, 1.82857 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road2" type="Sprite" parent="Road"]
+position = Vector2( 256, 3.05176e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road3" type="Sprite" parent="Road"]
+position = Vector2( 512, 3.05176e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road4" type="Sprite" parent="Road"]
+position = Vector2( 384, 6.10352e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road5" type="Sprite" parent="Road"]
+position = Vector2( 128, 3.05176e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road2" type="Sprite" parent="."]
+position = Vector2( 128, 624 )
+scale = Vector2( 2, 1.82857 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road2" type="Sprite" parent="Road2"]
+position = Vector2( 256, 3.05176e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road3" type="Sprite" parent="Road2"]
+position = Vector2( 512, 3.05176e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road4" type="Sprite" parent="Road2"]
+position = Vector2( 384, 6.10352e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road5" type="Sprite" parent="Road2"]
+position = Vector2( 128, 3.05176e-05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 51, 128, 35 )
+
+[node name="Road V2" type="Sprite" parent="."]
+position = Vector2( 128, 560 )
+scale = Vector2( 2, 1.6 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V3" type="Sprite" parent="Road V2"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V4" type="Sprite" parent="Road V2"]
+position = Vector2( 256, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V5" type="Sprite" parent="Road V2"]
+position = Vector2( 384, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V6" type="Sprite" parent="Road V2"]
+position = Vector2( 512, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V3" type="Sprite" parent="."]
+position = Vector2( 128, 504 )
+scale = Vector2( 2, 1.6 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V3" type="Sprite" parent="Road V3"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V4" type="Sprite" parent="Road V3"]
+position = Vector2( 256, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V5" type="Sprite" parent="Road V3"]
+position = Vector2( 384, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Road V6" type="Sprite" parent="Road V3"]
+position = Vector2( 512, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 128, 40 )
+
+[node name="Barricade" type="Sprite" parent="."]
+position = Vector2( 584, 488 )
+scale = Vector2( 2.0625, 1.25 )
+texture = ExtResource( 5 )
+
+[node name="Barricade2" type="Sprite" parent="Barricade"]
+position = Vector2( -143.515, 128 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="Barricade3" type="Sprite" parent="Barricade"]
+position = Vector2( 128, 128 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -40, 544 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 584, 488 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 288, 648 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 848, 648 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1320, 536 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -24, 296 )
+shape = SubResource( 3 )

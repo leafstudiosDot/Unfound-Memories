@@ -7,7 +7,7 @@ var flipped = false
 var level : int = 1
 var levelxp : int = 0 # (Level Int * 16 = levelxp)
 var karma : float = 0.0
-var moveSpeed : int = 15
+var moveSpeed : int = 7
 var speedBonus : int = 0
 # Currency £
 var money : float = 20.0
