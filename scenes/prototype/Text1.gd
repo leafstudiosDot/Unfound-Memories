@@ -26,7 +26,7 @@ func _play():
 	set_process_input(true)
 
 func _physics_process(delta):
-	if visible_characters > get_total_character_count() && page == 2:
+	if visible_characters > get_total_character_count() && page == 2	:
 		inputName.visible = true
 	else:
 		inputName.visible = false
