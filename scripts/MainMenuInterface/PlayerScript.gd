@@ -25,6 +25,7 @@ var esteem : float = 0.0 # Confidential
 # Game
 var loc_coord : Vector2 = Vector2()
 var facing : Vector2 = Vector2() # Left and Right
+var weaponEquiped
 
 onready var rayCast = get_node("RayCast2D")
 onready var playerNameLabel = get_node("Player_Name")
@@ -36,6 +37,7 @@ onready var spriteMale = get_node("Sprite_Male")
 onready var spriteFemale = get_node("Sprite_Male")
 
 func _ready():
+	set_physics_process(false)
 	swordAnimationRight.visible = false
 	swordAnimationLeft.visible = false
 	swordAnimationRight_F.visible = false
@@ -54,12 +56,12 @@ func _ready():
 		playerNameLabel.show()
 	else:
 		playerNameLabel.hide()
-
+		
 func _physics_process(delta):
 	loc_coord = Vector2()
 	get_node( "Sprite_Male" ).set_flip_h( flipped )
 	get_node( "Sprite_Female" ).set_flip_h( flipped )
-	
+	weaponEquiped = get_node("/root/Node2D/ItemWeapon").get("weaponEquiped")
 	# Inputs and Actions
 	if Input.is_action_pressed("playermove_up"):
 		$AnimationPlayer.play("walk_right")
@@ -94,7 +96,7 @@ func _physics_process(delta):
 	else:
 		speedBonus = 0
 	
-	if Input.is_key_pressed(KEY_X) && flipped == false:
+	if Input.is_key_pressed(KEY_X) && flipped == false && weaponEquiped == true:
 		if female:
 			get_node( "Sprite_Female" ).visible = false
 		else:
@@ -107,7 +109,7 @@ func _physics_process(delta):
 		$AttackHitboxRight/CollisionShape2D.disabled = false
 		$AnimationPlayer.play("Attack")
 	
-	if Input.is_key_pressed(KEY_X) && flipped == true:
+	if Input.is_key_pressed(KEY_X) && flipped == true && weaponEquiped == true:
 		if female:
 			get_node( "Sprite_Female" ).visible = false
 		else:
@@ -123,6 +125,18 @@ func _physics_process(delta):
 	
 	move_and_slide(loc_coord * moveSpeed)
 
+# If Dialogue is visible player can't move
+
+#turns off the player
+func turnOffPlayer():
+	print("test")
+	set_physics_process(false)
+	pass
+	
+#turns on the player
+func turnOnPlayer():
+	set_physics_process(true)
+	pass
 
 func _on_AnimationPlayer_animation_finished(Attack):
 	if female:
@@ -140,4 +154,8 @@ func _on_AnimationPlayer_animation_finished(Attack):
 	$AttackHitboxRight/CollisionShape2D.disabled = true
 	visible = true
 	set_physics_process(true)
+	pass # Replace with function body.
+
+func _on_FadeIn_animation_finished(Fade_In):
+	$"Name Selection"._play()
 	pass # Replace with function body.

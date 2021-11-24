@@ -7,6 +7,7 @@ var weaponEquiped
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$FadeIn.play("Fade_In")
 	$Mirror2/RichTextLabel.visible = false
 	$Door/RichTextLabel.visible = false
 	get_node("StaticBody2D").visible = true
@@ -49,5 +50,8 @@ func _on_Area2D_body_exited(body):
 	pass # Replace with function body.
 
 func _input(event):
-	if Input.is_key_pressed(KEY_E):
-		get_tree().change_scene("res://scenes/Streets.tscn")
+	if Input.is_key_pressed(KEY_E) && weaponEquiped == true:
+		get_tree().change_scene("res://scenes/StreetsMainScene.tscn")
+
+
+ # Replace with function body.

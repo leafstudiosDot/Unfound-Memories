@@ -27,6 +27,7 @@ func _input(event):
 	if Input.is_key_pressed(KEY_E):
 		visible = false
 		weaponEquiped = true
+		get_node("/root/Node2D/Player/Name Selection/")._play()
 		set_process_input(false)
 		print("Weapon Equiped")
 
