@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Main Status
 var online = false
-var female = true
+var female = false
 var flipped = false
 var level : int = 1
 var levelxp : int = 0 # (Level Int * 16 = levelxp)
