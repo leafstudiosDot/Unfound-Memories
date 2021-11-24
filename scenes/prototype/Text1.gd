@@ -1,7 +1,11 @@
 extends RichTextLabel
 
 
-var dialogue = ["What’s your name?",""]
+var dialogue = ["Ugh... Where am I...? What happened...?",
+"I have to check the mirror",
+"What is your name?",
+"What happened...? Why can’t I seem to remember anything... I’ll have to figure this out.",
+""]
 var page = 0
 var arraySize = dialogue.size() - 1
 onready var inputName = get_node("/root/Name Selection/LineEdit")
@@ -22,7 +26,7 @@ func _play():
 	set_process_input(true)
 
 func _physics_process(delta):
-	if visible_characters > get_total_character_count():
+	if visible_characters > get_total_character_count() && page == 2:
 		inputName.visible = true
 	else:
 		inputName.visible = false
