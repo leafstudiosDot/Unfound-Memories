@@ -97,6 +97,7 @@ func _physics_process(delta):
 	
 	if Input.is_key_pressed(KEY_X) && flipped == false && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
 		spriteMale.visible = false
+		spriteFemale.visible = false
 		set_physics_process(false)
 		if female:
 			swordAnimationRight_F.visible = true
@@ -119,7 +120,11 @@ func _physics_process(delta):
 
 
 func _on_AnimationPlayer_animation_finished(Attack):
-	spriteMale.visible = true
+	if female:
+		spriteFemale.visible = true
+	else:
+		spriteMale.visible = true
+	
 	swordAnimationLeft.visible = false
 	swordAnimationRight.visible = false
 	swordAnimationLeft_F.visible = false
