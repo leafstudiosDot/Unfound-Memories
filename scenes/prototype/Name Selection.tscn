@@ -24,21 +24,22 @@ __meta__ = {
 }
 
 [node name="Text1" type="RichTextLabel" parent="DialogBox"]
-margin_left = -234.262
+margin_left = -235.0
 margin_top = -16.0
-margin_right = 238.54
-margin_bottom = 48.0
+margin_right = 380.0
+margin_bottom = 62.0
 rect_scale = Vector2( 0.798, 1.114 )
+text = "My name is "
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 336.0
-margin_top = 80.0
-margin_right = 448.0
-margin_bottom = 104.0
+margin_left = 289.636
+margin_top = 83.5355
+margin_right = 401.636
+margin_bottom = 107.536
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false

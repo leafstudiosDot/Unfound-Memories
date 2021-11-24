@@ -2,9 +2,14 @@ extends RichTextLabel
 
 
 var dialogue = ["Ugh... Where am I...? What happened...?",
-"I have to check the mirror",
-"What is your name?",
-"What happened...? Why can’t I seem to remember anything... I’ll have to figure this out.",
+"I need to look at the mirror to see myself.",
+"Who am I?",
+"Wait... I think I remember my name...",
+"My Name is ",
+"What happened...? Why can’t I seem to remember anything...?",
+"I managed to remember my name by just looking at the mirror...",
+"I hope I can remember more...",
+"I’ll have to figure this out.",
 ""]
 var page = 0
 var arraySize = dialogue.size() - 1
@@ -13,21 +18,18 @@ onready var officialName = get_node("/root/Name Selection/DialogBox/Name")
 var userName = ""
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	set_bbcode(dialogue[page])
-	set_visible_characters(0)
-	print(arraySize)
-	set_process_input(false)
-	pass # Replace with function body.
 
-func _play():
+
+
+func _ready():
 	set_bbcode(dialogue[page])
 	set_visible_characters(0)
 	set_process_input(true)
 
 func _physics_process(delta):
-	if visible_characters > get_total_character_count() && page == 2	:
+	if visible_characters > get_total_character_count() && page == 4:
 		inputName.visible = true
+		set_process_input(false)
 	else:
 		inputName.visible = false
 	print(arraySize)
