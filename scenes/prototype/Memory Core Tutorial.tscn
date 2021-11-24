@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/prototype/Text.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Main Scene Objects/Dialog box.png" type="Texture" id=2]
+[ext_resource path="res://fonts/MainFont.tres" type="DynamicFont" id=3]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 0.2, 0.2 )
@@ -14,8 +15,10 @@ texture = ExtResource( 2 )
 [node name="Text" type="RichTextLabel" parent="."]
 margin_left = 376.0
 margin_top = 224.0
-margin_right = 672.0
-margin_bottom = 296.0
+margin_right = 1841.0
+margin_bottom = 560.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/normal_font = ExtResource( 3 )
 text = "Text
 "
 script = ExtResource( 1 )
