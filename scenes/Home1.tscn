@@ -124,7 +124,6 @@ extents = Vector2( 6.19891, 8 )
 script = ExtResource( 14 )
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 margin_left = -856.0
 margin_top = -536.0
@@ -145,7 +144,6 @@ format = 1
 tile_data = PoolIntArray( -5, 4, 0, -4, 4, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 2, 0, -65535, 2, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 1, 0, 1, 1, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0 )
 
 [node name="Bed 1" type="Sprite" parent="."]
-visible = false
 position = Vector2( -144, 16 )
 scale = Vector2( 0.004004, 0.004004 )
 texture = ExtResource( 2 )
@@ -156,7 +154,6 @@ scale = Vector2( 0.00402282, 0.00387262 )
 texture = ExtResource( 5 )
 
 [node name="sunflower" type="Sprite" parent="."]
-visible = false
 position = Vector2( -117.003, -8 )
 scale = Vector2( 0.00324075, 0.00294044 )
 texture = ExtResource( 4 )
@@ -167,30 +164,27 @@ scale = Vector2( 0.00324075, 0.00294044 )
 texture = ExtResource( 3 )
 
 [node name="Cupboard 2" type="Sprite" parent="."]
-visible = false
 position = Vector2( -15.9995, 0.529732 )
 scale = Vector2( 0.00402282, 0.00387262 )
 texture = ExtResource( 5 )
 
 [node name="Gold Fish" type="Sprite" parent="."]
-visible = false
 position = Vector2( -14.224, -7.07308 )
 scale = Vector2( 0.00251157, 0.00230835 )
 texture = ExtResource( 6 )
 
 [node name="Toilet" type="Sprite" parent="."]
-visible = false
 position = Vector2( 55.1338, 3.9156 )
 scale = Vector2( 0.69948, 0.61993 )
 texture = ExtResource( 7 )
 
 [node name="Mirror" type="Sprite" parent="."]
-visible = false
 position = Vector2( 31.7993, -10.0497 )
 scale = Vector2( 0.905719, 0.905719 )
 texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -118.935, -0.44545 )
