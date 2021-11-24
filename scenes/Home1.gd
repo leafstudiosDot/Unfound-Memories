@@ -8,6 +8,7 @@ var weaponEquiped
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Mirror2/RichTextLabel.visible = false
+	$Door/RichTextLabel.visible = false
 	get_node("StaticBody2D").visible = true
 	set_process_input(false)
 	pass # Replace with function body.
@@ -19,6 +20,7 @@ func _process(delta):
 #DOOR
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player") && weaponEquiped == true:
+		$Door/RichTextLabel.visible = true
 		set_process_input(true)
 		print("Body Entered Door")
 	pass # Replace with function body.
@@ -41,6 +43,7 @@ func _on_Area2D2_body_exited(body):
 #DOOR
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Player") && weaponEquiped == true:
+		$Door/RichTextLabel.visible = false
 		set_process_input(false)
 		print("Body Exited Door")
 	pass # Replace with function body.
