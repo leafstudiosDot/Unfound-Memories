@@ -17,7 +17,7 @@ func _physics_process(delta):
 		move = position.direction_to(player.position) * speed
 	else:
 		move = Vector2.ZERO
-		
+	
 	move = move.normalized()
 	move = move_and_collide(move)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
