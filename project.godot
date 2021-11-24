@@ -21,10 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Unfound Memories"
+config/description="This is just the beginning"
 run/main_scene="res://scenes/introduction.tscn"
+run/low_processor_mode=true
 boot_splash/image="res://sprites/splash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://game_icon.png"
+config/macos_native_icon="res://game_icon.icns"
+config/windows_native_icon="res://game_icon.ico"
 
 [debug]
 
