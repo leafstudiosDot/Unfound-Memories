@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://props/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Streets.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://scenes/StreetsMainScene.gd" type="Script" id=6]
 [ext_resource path="res://scenes/prototype/Sword.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/prototype/Memory Core Tutorial.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/Character/Zombie_Static/Zomb 1-export.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Character/Zombie_Static/Zomb 2-export.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Character/Zombie_Static/Zomb 3-export.png" type="Texture" id=11]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 4.59275, -4.56493 )
@@ -106,11 +109,26 @@ current = true
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 204.116, 185.662 )
 
+[node name="Sprite" type="Sprite" parent="Enemy"]
+position = Vector2( 3.33325, 0 )
+scale = Vector2( -0.642, 0.642 )
+texture = ExtResource( 9 )
+
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 276.409, 200.271 )
 
+[node name="Sprite" type="Sprite" parent="Enemy2"]
+position = Vector2( 3.33325, 0 )
+scale = Vector2( -0.629625, 0.629625 )
+texture = ExtResource( 10 )
+
 [node name="Enemy3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 321.359, 159.442 )
+
+[node name="Sprite" type="Sprite" parent="Enemy3"]
+position = Vector2( 6.6665, 0 )
+scale = Vector2( -0.655004, 0.655004 )
+texture = ExtResource( 11 )
 
 [node name="Barricade" type="Sprite" parent="."]
 position = Vector2( 39, 232 )
