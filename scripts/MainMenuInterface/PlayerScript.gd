@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Main Status
 var online = false
-var female = false
+var female = true
 var flipped = false
 var level : int = 1
 var levelxp : int = 0 # (Level Int * 16 = levelxp)
@@ -31,12 +31,16 @@ onready var rayCast = get_node("RayCast2D")
 onready var playerNameLabel = get_node("Player_Name")
 onready var swordAnimationRight = get_node("SwordSwingingRight")
 onready var swordAnimationLeft = get_node("SwordSwingingLeft")
+onready var swordAnimationRight_F = get_node("SwordSwingingRight_F")
+onready var swordAnimationLeft_F = get_node("SwordSwingingLeft_F")
 onready var spriteMale = get_node("Sprite_Male")
 onready var spriteFemale = get_node("Sprite_Male")
 
 func _ready():
 	swordAnimationRight.visible = false
 	swordAnimationLeft.visible = false
+	swordAnimationRight_F.visible = false
+	swordAnimationLeft_F.visible = false
 	$AnimationPlayer.play("idle_right")
 	$AttackHitboxRight/CollisionShape2D.disabled = true
 	$AttackHitboxLeft/CollisionShape2D.disabled = true
@@ -94,13 +98,19 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_X) && flipped == false && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
 		spriteMale.visible = false
 		set_physics_process(false)
-		swordAnimationRight.visible = true
+		if female:
+			swordAnimationRight_F.visible = true
+		else:
+			swordAnimationRight.visible = true
 		$AttackHitboxRight/CollisionShape2D.disabled = false
 		$AnimationPlayer.play("Attack")
 	if Input.is_key_pressed(KEY_X) && flipped == true && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
 		spriteMale.visible = false
 		set_physics_process(false)
-		swordAnimationLeft.visible = true
+		if female:
+			swordAnimationLeft_F.visible = true
+		else:
+			swordAnimationLeft.visible = true
 		$AnimationPlayer.play("Attack")
 		$AttackHitboxLeft/CollisionShape2D.disabled = false
 	loc_coord.normalized()
@@ -112,6 +122,8 @@ func _on_AnimationPlayer_animation_finished(Attack):
 	spriteMale.visible = true
 	swordAnimationLeft.visible = false
 	swordAnimationRight.visible = false
+	swordAnimationLeft_F.visible = false
+	swordAnimationRight_F.visible = false
 	$AttackHitboxLeft/CollisionShape2D.disabled = true
 	$AttackHitboxRight/CollisionShape2D.disabled = true
 	visible = true
