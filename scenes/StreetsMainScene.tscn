@@ -19,33 +19,28 @@ scale = Vector2( 0.3, 0.3 )
 [node name="Baricade V3" type="Sprite" parent="."]
 position = Vector2( 395.539, 162.42 )
 scale = Vector2( 1.83333, 1.56667 )
+z_index = 1
 texture = ExtResource( 5 )
 
 [node name="Baricade V3" type="Sprite" parent="Baricade V3"]
 position = Vector2( -9.30516, 8.18399 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="Baricade V4" type="Sprite" parent="Baricade V3"]
 position = Vector2( -18.5514, 16.9753 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="Baricade V5" type="Sprite" parent="Baricade V3"]
 position = Vector2( -27.7976, 25.0903 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="Baricade V6" type="Sprite" parent="Baricade V3"]
 position = Vector2( -37.1883, 33.5434 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Baricade V3"]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Baricade V3/StaticBody2D"]
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Baricade V2" type="Sprite" parent="."]
@@ -55,29 +50,23 @@ texture = ExtResource( 5 )
 
 [node name="Baricade V3" type="Sprite" parent="Baricade V2"]
 position = Vector2( -9.30516, 8.18399 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="Baricade V4" type="Sprite" parent="Baricade V2"]
 position = Vector2( -18.5514, 16.9753 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="Baricade V5" type="Sprite" parent="Baricade V2"]
 position = Vector2( -27.7976, 25.0903 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="Baricade V6" type="Sprite" parent="Baricade V2"]
 position = Vector2( -37.1883, 33.5434 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Baricade V2"]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Baricade V2/StaticBody2D"]
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." groups=[
@@ -96,6 +85,7 @@ position = Vector2( 306.001, 164.686 )
 [node name="Barricade" type="Sprite" parent="."]
 position = Vector2( 39, 232 )
 scale = Vector2( 0.640625, 0.375 )
+z_index = 2
 texture = ExtResource( 3 )
 
 [node name="Barricade2" type="Sprite" parent="Barricade"]
@@ -108,7 +98,6 @@ texture = ExtResource( 3 )
 
 [node name="Barricade4" type="Sprite" parent="Barricade"]
 position = Vector2( 232.727, 0 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 
 [node name="Barricade2" type="Sprite" parent="Barricade/Barricade4"]
@@ -121,7 +110,6 @@ texture = ExtResource( 3 )
 
 [node name="Barricade5" type="Sprite" parent="Barricade"]
 position = Vector2( 465.454, 0 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 
 [node name="Barricade2" type="Sprite" parent="Barricade/Barricade5"]
