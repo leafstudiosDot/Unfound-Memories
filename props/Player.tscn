@@ -8,9 +8,8 @@
 [ext_resource path="res://sprites/Character/Animation/SwordSwinging.png" type="Texture" id=6]
 [ext_resource path="res://sprites/Character/Animation/SwordSwinging_F.png" type="Texture" id=7]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 8.0
-height = 0.565971
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.6762, 36.1659 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Attack"
@@ -128,12 +127,14 @@ extents = Vector2( 20.5821, 48 )
 extents = Vector2( 19.7849, 48 )
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.345, 0.345 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1.19209e-07, 5.96046e-08 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
@@ -149,7 +150,7 @@ anims/walk_right = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.3, 0.3 )
+zoom = Vector2( 0.2, 0.2 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
@@ -173,17 +174,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite_Male" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 0.234565, 0.234565 )
-texture = ExtResource( 4 )
-hframes = 2
-
 [node name="Sprite_Female" type="Sprite" parent="."]
-visible = false
 position = Vector2( -4.12033, 0.374584 )
 scale = Vector2( 0.200563, 0.200563 )
 texture = ExtResource( 5 )
+hframes = 2
+
+[node name="Sprite_Male" type="Sprite" parent="."]
+position = Vector2( 0, 0.891899 )
+scale = Vector2( 0.223473, 0.22819 )
+texture = ExtResource( 4 )
 hframes = 2
 
 [node name="AttackHitboxRight" type="Area2D" parent="." groups=[

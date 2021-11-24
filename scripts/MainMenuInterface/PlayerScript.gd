@@ -94,7 +94,7 @@ func _physics_process(delta):
 	else:
 		speedBonus = 0
 	
-	if Input.is_key_pressed(KEY_X) && flipped == false && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
+	if Input.is_key_pressed(KEY_X) && flipped == false:
 		if female:
 			get_node( "Sprite_Female" ).visible = false
 		else:
@@ -106,7 +106,8 @@ func _physics_process(delta):
 			swordAnimationRight.visible = true
 		$AttackHitboxRight/CollisionShape2D.disabled = false
 		$AnimationPlayer.play("Attack")
-	if Input.is_key_pressed(KEY_X) && flipped == true && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
+	
+	if Input.is_key_pressed(KEY_X) && flipped == true:
 		if female:
 			get_node( "Sprite_Female" ).visible = false
 		else:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sunflower.png-420d2e29fd1b97572cbfa1ceb6156ef4.stex"
+path="res://.import/Baricade V2.png-cd8f42a64ca2e6a4b012d2a1e3f17724.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Main Scene Objects/sunflower.png"
-dest_files=[ "res://.import/sunflower.png-420d2e29fd1b97572cbfa1ceb6156ef4.stex" ]
+source_file="res://sprites/Main Scene Objects/Baricade V2.png"
+dest_files=[ "res://.import/Baricade V2.png-cd8f42a64ca2e6a4b012d2a1e3f17724.stex" ]
 
 [params]
 

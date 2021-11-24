@@ -18,7 +18,7 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_body_entered(body):
+func _play():
 	text.visible = true
 	set_process_input(true)
 	pass # Replace with function body.
@@ -31,6 +31,7 @@ func _input(event):
 		print("Weapon Equiped")
 
 
-func _on_Area2D_body_exited(body):
+func _play1():
 	text.visible = false
+	set_process_input(false)
 	pass # Replace with function body.
