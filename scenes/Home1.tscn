@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://sprites/Main Scene Objects/Wood Flooring V3.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Main Scene Objects/Bed 1.png" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://sprites/Main Scene Objects/Wooden Wall V2.png" type="Texture" id=12]
 [ext_resource path="res://sprites/Main Scene Objects/Broken FloorV2 .png" type="Texture" id=13]
 [ext_resource path="res://scenes/Home1.gd" type="Script" id=14]
+[ext_resource path="res://scenes/prototype/Sword.tscn" type="PackedScene" id=15]
+[ext_resource path="res://fonts/arlrdbd.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://scenes/Mirror2.gd" type="Script" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Wood Flooring V3.png 0"
@@ -103,7 +106,7 @@ a = Vector2( -160, 96 )
 b = Vector2( -160, -16 )
 
 [sub_resource type="SegmentShape2D" id=6]
-a = Vector2( 0, 64 )
+a = Vector2( 0.5849, 33.3098 )
 b = Vector2( 0, 96 )
 
 [sub_resource type="SegmentShape2D" id=7]
@@ -112,7 +115,7 @@ b = Vector2( 0, 64 )
 
 [sub_resource type="SegmentShape2D" id=8]
 a = Vector2( 64, -16 )
-b = Vector2( 64, 64 )
+b = Vector2( 64.1676, 31.1566 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 10, 8 )
@@ -120,21 +123,26 @@ extents = Vector2( 10, 8 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6.19891, 8 )
 
-[node name="House" type="Node2D"]
+[sub_resource type="DynamicFont" id=11]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D"]
 script = ExtResource( 14 )
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = -856.0
-margin_top = -536.0
+margin_top = -552.0
 margin_right = 935.0
-margin_bottom = 578.0
+margin_bottom = 562.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 zoom = Vector2( 0.4, 0.4 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -198,9 +206,7 @@ position = Vector2( -15.1072, -0.44545 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.0343781, 0.337952 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
@@ -213,15 +219,11 @@ shape = SubResource( 5 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.594604, -31.4658 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 8 )
-
-[node name="Player" parent="." groups=[
-"Player",
-] instance=ExtResource( 10 )]
-position = Vector2( -136, 24 )
 
 [node name="Door" type="Area2D" parent="."]
 
@@ -229,11 +231,35 @@ position = Vector2( -136, 24 )
 position = Vector2( -40, -8 )
 shape = SubResource( 9 )
 
-[node name="Mirror2" type="Area2D" parent="."]
+[node name="Mirror2" type="Area2D" parent="." groups=[
+"Mirror",
+]]
+script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror2"]
 position = Vector2( 31.2054, -14.6216 )
 shape = SubResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mirror2"]
+margin_left = 11.5455
+margin_top = -39.3318
+margin_right = 251.546
+margin_bottom = 0.668179
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/normal_font = SubResource( 11 )
+bbcode_text = "Interact Mirror [E]"
+text = "Interact Mirror [E]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemWeapon" parent="." instance=ExtResource( 15 )]
+position = Vector2( -231.533, 16.9879 )
+
+[node name="Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 10 )]
+position = Vector2( -142.959, 14.8263 )
 
 [connection signal="body_entered" from="Door" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Door" to="." method="_on_Area2D_body_exited"]

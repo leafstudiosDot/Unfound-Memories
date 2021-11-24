@@ -106,6 +106,7 @@ func _physics_process(delta):
 			swordAnimationRight.visible = true
 		$AttackHitboxRight/CollisionShape2D.disabled = false
 		$AnimationPlayer.play("Attack")
+	
 	if Input.is_key_pressed(KEY_X) && flipped == true && get_node("/root/Node2D/ItemWeapon").get("weaponEquiped"):
 		if female:
 			get_node( "Sprite_Female" ).visible = false
