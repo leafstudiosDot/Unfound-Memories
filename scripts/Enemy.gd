@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 var player = null
 var move = Vector2.ZERO
 var speed = 0.5
