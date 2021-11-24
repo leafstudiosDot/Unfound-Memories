@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://props/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Streets.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/Main Scene Objects/Barricade.png" type="Texture" id=3]
+[ext_resource path="res://scenes/prototype/Enemy.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Street Scene" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 8 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 1 )]
+position = Vector2( 440, -32 )
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2( -92.7536, -510.145 )
+scale = Vector2( 2.89855, 2.89855 )
+current = true
+
+[node name="Barricade" type="Sprite" parent="."]
+position = Vector2( 39, 232 )
+scale = Vector2( 0.640625, 0.375 )
+texture = ExtResource( 3 )
+
+[node name="Barricade2" type="Sprite" parent="Barricade"]
+position = Vector2( 155.151, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="Barricade3" type="Sprite" parent="Barricade"]
+position = Vector2( 77.5757, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="Barricade4" type="Sprite" parent="Barricade"]
+position = Vector2( 232.727, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="Barricade2" type="Sprite" parent="Barricade/Barricade4"]
+position = Vector2( 155.151, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="Barricade3" type="Sprite" parent="Barricade/Barricade4"]
+position = Vector2( 77.5757, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="Barricade5" type="Sprite" parent="Barricade"]
+position = Vector2( 465.454, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="Barricade2" type="Sprite" parent="Barricade/Barricade5"]
+position = Vector2( 155.151, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="Barricade4" type="Sprite" parent="Barricade/Barricade5"]
+position = Vector2( -543.03, -3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="Barricade3" type="Sprite" parent="Barricade/Barricade5"]
+position = Vector2( 77.5757, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 336, 48 )

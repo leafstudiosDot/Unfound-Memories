@@ -8,7 +8,7 @@
 [ext_resource path="res://sprites/Character/Animation/SwordSwinging.png" type="Texture" id=6]
 [ext_resource path="res://sprites/Character/Animation/SwordSwinging_F.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.6762, 36.1659 )
 
 [sub_resource type="Animation" id=2]
@@ -131,7 +131,7 @@ scale = Vector2( 0.345, 0.345 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
