@@ -132,7 +132,7 @@ scale = Vector2( 0.345, 0.345 )
 script = ExtResource( 2 )
 
 [node name="Name Selection" parent="." instance=ExtResource( 8 )]
-position = Vector2( -399.855, -208.518 )
+position = Vector2( -390.963, -179.107 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

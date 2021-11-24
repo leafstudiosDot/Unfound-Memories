@@ -4,6 +4,7 @@ var player = null
 var move = Vector2.ZERO
 var speed = 0.5
 var healthPoints = 100
+var Dead = false
 onready var healthLabel = get_node("RichTextLabel")
 
 # Called when the node enters the scene tree for the first time.
@@ -46,10 +47,18 @@ func _on_Area2D2_body_entered(body):
 
 func _on_HitBox_area_entered(area):
 	if area.is_in_group("Sword"):
+		modulate = Color(1,0,0)
 		healthPoints -= 20
 		healthLabel.bbcode_text = "Health: " + str(healthPoints)
 		print("Enemy HP: " + str(healthPoints))
 		if healthPoints <= 0:
 			print("Enemy Dead")
+			Dead = true
 			queue_free()
+	pass # Replace with function body.
+
+
+func _on_HitBox_area_exited(area):
+	if area.is_in_group("Sword"):
+		modulate = Color(1,1,1)
 	pass # Replace with function body.

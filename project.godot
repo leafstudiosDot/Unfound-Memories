@@ -37,8 +37,6 @@ settings/fps/force_fps=60
 
 [display]
 
-window/size/width=1280
-window/size/height=720
 window/size/always_on_top=true
 window/per_pixel_transparency/allowed=true
 window/energy_saving/keep_screen_on=false

@@ -22,7 +22,10 @@ func _play():
 	text.visible = true
 	set_process_input(true)
 	pass # Replace with function body.
-	
+
+func _weaponEquiped():
+	weaponEquiped = true
+
 func _input(event):
 	if Input.is_key_pressed(KEY_E):
 		visible = false

@@ -28,7 +28,7 @@ margin_left = -238.0
 margin_top = -15.0
 margin_right = 375.0
 margin_bottom = 49.0
-rect_scale = Vector2( 0.798, 1.114 )
+rect_scale = Vector2( 0.800409, 1.12125 )
 text = "I think its"
 script = ExtResource( 3 )
 __meta__ = {
@@ -46,7 +46,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.002
+wait_time = 0.04
 autostart = true
 
 [connection signal="text_entered" from="DialogBox/LineEdit" to="DialogBox/Text1" method="_on_LineEdit_text_entered"]

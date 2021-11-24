@@ -2,8 +2,8 @@ extends RichTextLabel
 
 
 var dialogue = [
-"Ugh... Where am I...? What happened...?", #Player Dialogue Array = 0
-"I have to check the mirror to see myself",
+"Ugh... Where am I...? What happened...?", #Player Dialogue Array Index: 0
+"I... I have to check the mirror to see myself...",
 "Who am I?",
 "Wait I think I can remember my name...",
 "I think its",
@@ -13,6 +13,12 @@ var dialogue = [
 "I saw a Sword earlier... Lets pick it up!",
 "Since I forgot what is outside,",
 "I will use this just in case...",
+"Wait... a-re those... real?!",
+"Bleeerrgghhh...", #Zombie Dialogue Array Index: 12
+"Murrrrggh...",
+"Weerrghhtt...",
+"This isn’t good, I’m going to have to hold my own!", #Player Dialogue Array Index: 15
+"Phew... that was close...",
 ""
 ]
 
@@ -22,7 +28,7 @@ onready var inputName = get_node("/root/Node2D/Player/Name Selection/DialogBox/L
 onready var officialName = get_node("/root/Node2D/Player/Name Selection/DialogBox/Name")
 onready var player = get_node("/root/Node2D/Player")
 var userName = ""
-
+onready var dialogueBox = get_node("/root/Node2D/Player/Name Selection/DialogBox")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process_input(false)
@@ -62,18 +68,41 @@ func _input(event):
 				if page == 9:
 					set_process_input(false)
 					get_node("/root/Node2D/Player/Name Selection/DialogBox").visible = false
-					player.set_physics_process(true)
+					player.set_physics_process(false)
+					if dialogueBox.visible == false:
+						print("box not visible")
+						player.set_physics_process(true)
 				
 				if page == 11:
 					set_process_input(false)
 					get_node("/root/Node2D/Player/Name Selection/DialogBox").visible = false
-					player.set_physics_process(true)
+					player.set_physics_process(false)
+					if dialogueBox.visible == false:
+						print("box not visible")
+						player.set_physics_process(true)
+					
+				if page == 12:
+					officialName.visible = true
+					officialName.bbcode_text = "Zombie"
+				if page == 15:
+					officialName.visible = false
+				if page == 16:
+					set_process_input(false)
+					get_node("/root/Node2D/Player/Name Selection/DialogBox").visible = false
+					player.set_physics_process(false)
+					if dialogueBox.visible == false:
+						print("box not visible")
+						player.set_physics_process(true)
 				
 				if arraySize == page:
 					print("max")
 					set_process_input(false)
 					get_node("/root/Node2D/Player/Name Selection/DialogBox").visible = false
 					player.set_physics_process(true)
+func makePage12():
+	officialName.visible = false
+	page = 11
+
 
 func _on_LineEdit_text_entered(text):
 	userName = text

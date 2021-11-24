@@ -21,6 +21,7 @@ func _input(event):
 		print("key pressed")
 		mirrorInteracted = true
 		set_process_input(false)
+		$RichTextLabel.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

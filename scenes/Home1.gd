@@ -28,7 +28,7 @@ func _on_Area2D_body_entered(body):
 
 #MIRROR
 func _on_Area2D2_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") && mirrorInteracted == false:
 		$Mirror2/RichTextLabel.visible = true
 		.get_node("Mirror2")._play()
 		print("Body Entered Mirror")
@@ -51,7 +51,10 @@ func _on_Area2D_body_exited(body):
 
 func _input(event):
 	if Input.is_key_pressed(KEY_E) && weaponEquiped == true:
-		get_tree().change_scene("res://scenes/StreetsMainScene.tscn")
+		$FadeOut.play("Fade_Out")
 
 
- # Replace with function body.
+
+func _on_FadeOut_animation_finished(Fade_Out):
+	get_tree().change_scene("res://scenes/StreetsMainScene.tscn")
+	pass # Replace with function body.

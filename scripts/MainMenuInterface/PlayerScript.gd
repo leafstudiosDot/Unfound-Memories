@@ -26,7 +26,6 @@ var esteem : float = 0.0 # Confidential
 var loc_coord : Vector2 = Vector2()
 var facing : Vector2 = Vector2() # Left and Right
 var weaponEquiped
-
 onready var rayCast = get_node("RayCast2D")
 onready var playerNameLabel = get_node("Player_Name")
 onready var swordAnimationRight = get_node("SwordSwingingRight")

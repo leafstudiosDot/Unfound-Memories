@@ -1,16 +1,36 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://props/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Streets.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/Main Scene Objects/Barricade.png" type="Texture" id=3]
 [ext_resource path="res://scenes/prototype/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/Main Scene Objects/Baricade V2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/StreetsMainScene.gd" type="Script" id=6]
+[ext_resource path="res://scenes/prototype/Sword.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/prototype/Memory Core Tutorial.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 4.59275, -4.56493 )
 b = Vector2( -42.1634, 40.2707 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "Fade_In"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Street Scene" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 7.73514 )
@@ -74,13 +94,23 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 1 )]
 position = Vector2( 87.2273, 190.422 )
 
+[node name="TutorialMemoryCore" parent="Player" instance=ExtResource( 8 )]
+position = Vector2( -306.866, -258.526 )
+scale = Vector2( 0.57971, 0.57971 )
+
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2( -92.7536, -510.145 )
 scale = Vector2( 2.89855, 2.89855 )
 current = true
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 306.001, 164.686 )
+position = Vector2( 204.116, 185.662 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 276.409, 200.271 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 321.359, 159.442 )
 
 [node name="Barricade" type="Sprite" parent="."]
 position = Vector2( 39, 232 )
@@ -123,3 +153,12 @@ texture = ExtResource( 3 )
 [node name="Barricade3" type="Sprite" parent="Barricade/Barricade5"]
 position = Vector2( 77.5757, 3.05176e-05 )
 texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fade_In = SubResource( 2 )
+
+[node name="ItemWeapon" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 2.5, 1.5 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -7,10 +7,13 @@ var weaponEquiped
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	weaponEquiped = get_node("Area2D").get("weaponEquiped")
-	mirrorInteracted = get_node("/root/Node2D/Mirror2").get("mirrorInteracted")
 	pass # Replace with function body.
 
+func physicsProcessOff():
+	set_physics_process(false)
 
+func _physics_process(delta):
+	mirrorInteracted = get_node("/root/Node2D/Mirror2").get("mirrorInteracted")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
