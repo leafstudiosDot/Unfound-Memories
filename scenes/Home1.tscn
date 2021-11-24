@@ -145,32 +145,32 @@ tile_data = PoolIntArray( -5, 4, 0, -4, 4, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -655
 
 [node name="Bed 1" type="Sprite" parent="."]
 position = Vector2( -144, 16 )
-scale = Vector2( 0.004004, 0.004004 )
+scale = Vector2( 0.372531, 0.372531 )
 texture = ExtResource( 2 )
 
 [node name="Cupboard 1" type="Sprite" parent="."]
-position = Vector2( -120, 0 )
-scale = Vector2( 0.00402282, 0.00387262 )
+position = Vector2( -120, -0.023242 )
+scale = Vector2( 0.28128, 0.270778 )
 texture = ExtResource( 5 )
 
 [node name="sunflower" type="Sprite" parent="."]
-position = Vector2( -117.003, -8 )
-scale = Vector2( 0.00324075, 0.00294044 )
+position = Vector2( -117.732, -6.73952 )
+scale = Vector2( 0.159282, 0.144522 )
 texture = ExtResource( 4 )
 
 [node name="wooden door frame" type="Sprite" parent="."]
 position = Vector2( -40, -8 )
-scale = Vector2( 0.00324075, 0.00294044 )
+scale = Vector2( 0.224243, 0.203463 )
 texture = ExtResource( 3 )
 
 [node name="Cupboard 2" type="Sprite" parent="."]
 position = Vector2( -15.9995, 0.529732 )
-scale = Vector2( 0.00402282, 0.00387262 )
+scale = Vector2( 0.243138, 0.23406 )
 texture = ExtResource( 5 )
 
 [node name="Gold Fish" type="Sprite" parent="."]
 position = Vector2( -14.224, -7.07308 )
-scale = Vector2( 0.00251157, 0.00230835 )
+scale = Vector2( 0.213815, 0.196514 )
 texture = ExtResource( 6 )
 
 [node name="Toilet" type="Sprite" parent="."]
@@ -184,7 +184,6 @@ scale = Vector2( 0.905719, 0.905719 )
 texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -118.935, -0.44545 )

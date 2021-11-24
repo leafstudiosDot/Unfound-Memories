@@ -24,7 +24,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D2_body_entered(body):
 	if body.is_in_group("Player"):
-		print("Body Entered Door")
+		print("Body Entered Mirror")
 	pass # Replace with function body.
 
 #MIRROR
@@ -35,5 +35,5 @@ func _on_Area2D2_body_exited(body):
 
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Player"):
-		print("Body Exited Mirror")
+		print("Body Exited Door")
 	pass # Replace with function body.
