@@ -14,7 +14,7 @@ scale = Vector2( 0.3, 0.3 )
 [node name="Player" parent="." groups=[
 "Player",
 ] instance=ExtResource( 1 )]
-position = Vector2( 440, -32 )
+position = Vector2( 168, 184 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2( -92.7536, -510.145 )
@@ -65,4 +65,4 @@ position = Vector2( 77.5757, 3.05176e-05 )
 texture = ExtResource( 3 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 336, 48 )
+position = Vector2( 344, 176 )
