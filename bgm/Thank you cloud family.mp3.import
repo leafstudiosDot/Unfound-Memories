@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Thank you cloud family.mp3-fdf22bbf4736d7688760de851b0c6567.mp3str"
+
+[deps]
+
+source_file="res://bgm/Thank you cloud family.mp3"
+dest_files=[ "res://.import/Thank you cloud family.mp3-fdf22bbf4736d7688760de851b0c6567.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
