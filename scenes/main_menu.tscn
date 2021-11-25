@@ -154,12 +154,9 @@ __meta__ = {
 [node name="AnimationSet" type="AnimationPlayer" parent="CanvasLayer/UI"]
 anims/FadeOut = SubResource( 3 )
 
-[node name="Fade" type="Panel" parent="CanvasLayer/UI"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = -4.00452
-margin_top = -1.05945
-margin_right = 1276.0
-margin_bottom = 718.941
+[node name="Panel" type="Panel" parent="CanvasLayer/UI"]
+margin_right = 1024.0
+margin_bottom = 592.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -222,17 +219,28 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/UI"]
 
 [node name="pointer" type="Sprite" parent="CanvasLayer/UI/CanvasLayer"]
-position = Vector2( -73.9564, 362.697 )
+position = Vector2( -209.956, 330.697 )
 scale = Vector2( 0.0723613, 0.0682228 )
 texture = ExtResource( 7 )
 offset = Vector2( 8373.03, 256 )
 script = ExtResource( 9 )
 
 [node name="pointer2" type="Sprite" parent="CanvasLayer/UI/CanvasLayer"]
-position = Vector2( 558.147, 433.352 )
+position = Vector2( 424, 400 )
 scale = Vector2( 0.0811405, 0.077002 )
 texture = ExtResource( 7 )
 script = ExtResource( 9 )
+
+[node name="Fade" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -4.00452
+margin_top = -1.05945
+margin_right = 1276.0
+margin_bottom = 718.941
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="gui_input" from="CanvasLayer/UI/MenuItems/Start" to="CanvasLayer/UI/MenuItems/Start" method="_on_Start_gui_input"]
 [connection signal="mouse_entered" from="CanvasLayer/UI/MenuItems/Start" to="CanvasLayer/UI/MenuItems/Start" method="_on_Start_mouse_entered"]
