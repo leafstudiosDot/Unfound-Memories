@@ -29,6 +29,8 @@ onready var officialName = get_node("/root/Node2D/Player/Name Selection/DialogBo
 onready var player = get_node("/root/Node2D/Player")
 var userName = ""
 onready var dialogueBox = get_node("/root/Node2D/Player/Name Selection/DialogBox")
+
+var TutorialDoneExec = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process_input(false)
@@ -49,8 +51,17 @@ func _physics_process(delta):
 		inputName.visible = true
 	else:
 		inputName.visible = false
+	
+	if arraySize == page:
+		if !TutorialDoneExec:
+			NextScene()
+			TutorialDoneExec = true
+	
 	#print(arraySize)
 	#print(page)
+	
+func NextScene():
+	get_tree().change_scene("res://scenes/Credits.tscn")
 
 func _input(event):
 	if event is InputEventMouseButton or InputEventKey:
