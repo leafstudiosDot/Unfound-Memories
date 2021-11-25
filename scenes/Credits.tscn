@@ -1,0 +1,126 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/MainFont.tres" type="DynamicFont" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Credits Roll"
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 2904.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]yep, this is the end[/center]
+
+[center]It's just short for a school project[/center]
+
+[center]We survive school[/center]
+
+[center]We graduate college[/center]
+
+[center]How is your life?[/center]
+
+[center]Let's mention all of our nostalgias[/center]
+
+[center]Future browsers killing off Flash Games (.swf)[/center]
+
+[center]Face to Face classes (hope it will happen next year)[/center]
+
+[center]Nokia 3310, and its still a thing[/center]
+
+[center]Samba's simple character, at least he did the right thing for this game[/center]
+
+[center]lady and eggplant man[/center]
+
+
+
+[center]Fluff Off February (PBL Group 3) presenting you[/center]
+
+
+[center]Unfound Memories[/center]
+
+[center]A small team of Fluff Off February (PBL Group 3)[/center]
+
+[center]Storywriter- Mik Cid[/center]
+[center]Programmer - Allen[/center]
+[center]Programmer - Moritz[/center]
+[center]Sprites - Samba[/center]
+[center]Sprites - Raynard[/center]
+[center]QA- Raynard[/center]
+[center]Mentor - Neil[/center]
+[center]Stock Audio - Internet[/center]
+[center]Mentor - Neil[/center]
+
+[center]Thanks to all of the open sources project for making this game possible:[/center]
+[center]Godot Game Engine[/center]
+[center]GitHub[/center]
+[center]MIT License[/center]
+
+[center]I prefer Unity or Unreal for games not going to lie with you.[/center]
+
+[center]The End[/center]"
+text = "yep, this is the end
+
+It's just short for a school project
+
+We survive school
+
+We graduate college
+
+How is your life?
+
+Let's mention all of our nostalgias
+
+Future browsers killing off Flash Games (.swf)
+
+Face to Face classes (hope it will happen next year)
+
+Nokia 3310, and its still a thing
+
+Samba's simple character, at least he did the right thing for this game
+
+lady and eggplant man
+
+
+
+Fluff Off February (PBL Group 3) presenting you
+
+
+Unfound Memories
+
+A small team of Fluff Off February (PBL Group 3)
+
+Storywriter- Mik Cid
+Programmer - Allen
+Programmer - Moritz
+Sprites - Samba
+Sprites - Raynard
+QA- Raynard
+Mentor - Neil
+Stock Audio - Internet
+Mentor - Neil
+
+Thanks to all of the open sources project for making this game possible:
+Godot Game Engine
+GitHub
+MIT License
+
+I prefer Unity or Unreal for games not going to lie with you.
+
+The End"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Credits Roll" = SubResource( 1 )
