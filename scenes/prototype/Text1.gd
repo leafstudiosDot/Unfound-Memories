@@ -49,8 +49,8 @@ func _physics_process(delta):
 		inputName.visible = true
 	else:
 		inputName.visible = false
-	print(arraySize)
-	print(page)
+	#print(arraySize)
+	#print(page)
 
 func _input(event):
 	if event is InputEventMouseButton or InputEventKey:
