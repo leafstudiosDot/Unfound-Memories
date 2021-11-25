@@ -5,6 +5,7 @@ onready var player = get_node("/root/Node2D/Player")
 onready var dialogueBox = get_node("Player/Name Selection")
 onready var itemWeapon = get_node("ItemWeapon")
 onready var dialoguePage = get_node("Player/Name Selection/DialogBox/Text1")
+onready var ZombieAnim = get_node("AnimationPlayer2")
 
 onready var Dead = false
 
@@ -18,6 +19,7 @@ func _ready():
 
 func _physics_process(delta):
 	Dead = get_node("Enemy3").get("Dead")
+	ZombieAnim.play("Zombie walks")
 	if Dead == true:
 		get_node("Player/TutorialMemoryCore").visible = true
 		get_node("Player/TutorialMemoryCore/Text")._play()

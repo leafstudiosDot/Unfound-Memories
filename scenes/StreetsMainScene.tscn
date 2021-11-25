@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://props/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Streets.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://sprites/Character/Zombie_Static/Zomb 1-export.png" type="Texture" id=9]
 [ext_resource path="res://sprites/Character/Zombie_Static/Zomb 2-export.png" type="Texture" id=10]
 [ext_resource path="res://sprites/Character/Zombie_Static/Zomb 3-export.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Character/Zombie_Static/Zomb 2_1-export.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Character/Zombie_Static/Zomb 1_1-export.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Character/Zombie_Static/Zomb 3_1-export.png" type="Texture" id=14]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 4.59275, -4.56493 )
@@ -30,6 +33,45 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Zombie walks"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 13 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy2/Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ), ExtResource( 12 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Enemy3/Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 14 ) ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -178,5 +220,10 @@ anims/Fade_In = SubResource( 2 )
 [node name="ItemWeapon" parent="." instance=ExtResource( 7 )]
 visible = false
 position = Vector2( 2.5, 1.5 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
+method_call_mode = 1
+"anims/Zombie walks" = SubResource( 3 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
