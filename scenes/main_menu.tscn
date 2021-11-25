@@ -169,6 +169,10 @@ __meta__ = {
 }
 
 [node name="Start" type="RichTextLabel" parent="CanvasLayer/UI/MenuItems"]
+anchor_left = 0.0235001
+anchor_top = -0.054451
+anchor_right = 0.0235001
+anchor_bottom = -0.054451
 margin_left = 431.06
 margin_top = 330.178
 margin_right = 587.06

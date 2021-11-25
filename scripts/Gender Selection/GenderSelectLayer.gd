@@ -20,6 +20,10 @@ func GenderChosen():
 	FadeOutAfter.visible = true
 	$AnimationPlayer.play("GenderChosen")
 	pass
+	
+func NextScene():
+	get_tree().change_scene("res://scenes/Home1.tscn")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

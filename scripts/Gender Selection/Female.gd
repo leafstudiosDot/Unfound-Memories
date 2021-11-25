@@ -28,5 +28,5 @@ func _on_Female_mouse_exited():
 func _on_Female_gui_input(event):
 	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):
 		print("Picked Female")
-		genderPicked.GenderChosen()
+		#genderPicked.GenderChosen()
 	pass # Replace with function body.

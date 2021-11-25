@@ -136,12 +136,12 @@ anims/GenderChosen = SubResource( 3 )
 
 [node name="Female" type="RichTextLabel" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 661.509
-margin_top = 333.225
-margin_right = 822.509
-margin_bottom = 382.225
+margin_left = 533.509
+margin_top = 269.225
+margin_right = 694.509
+margin_bottom = 318.225
 custom_fonts/normal_font = SubResource( 4 )
-text = "Female"
+text = "Female (coming soon)"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -151,10 +151,10 @@ mouse_out = Color( 1, 1, 1, 1 )
 
 [node name="Male" type="RichTextLabel" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 508.228
-margin_top = 332.088
-margin_right = 614.228
-margin_bottom = 388.088
+margin_left = 380.228
+margin_top = 268.088
+margin_right = 486.228
+margin_bottom = 324.088
 custom_fonts/normal_font = SubResource( 5 )
 text = "Male"
 script = ExtResource( 4 )
