@@ -11,6 +11,9 @@ func _ready():
 	$AnimationPlayer.play("Credits Roll")
 	pass # Replace with function body.
 
+func gotoMainMenu():
+	get_tree().change_scene("res://scenes/main_menu.tscn")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
