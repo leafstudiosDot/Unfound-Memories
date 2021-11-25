@@ -86,6 +86,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "NextScene"
+} ]
+}
 
 [sub_resource type="DynamicFont" id=4]
 size = 41
@@ -136,10 +150,10 @@ anims/GenderChosen = SubResource( 3 )
 
 [node name="Female" type="RichTextLabel" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 533.509
-margin_top = 269.225
-margin_right = 694.509
-margin_bottom = 318.225
+margin_left = 534.0
+margin_top = 269.0
+margin_right = 1019.0
+margin_bottom = 318.0
 custom_fonts/normal_font = SubResource( 4 )
 text = "Female (coming soon)"
 script = ExtResource( 3 )
