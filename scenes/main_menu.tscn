@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://sprites/particle.png" type="Texture" id=1]
 [ext_resource path="res://scripts/MainMenuInterface/MainMenu.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/pointer.png" type="Texture" id=7]
 [ext_resource path="res://scripts/MainMenuInterface/MainMenuOptions.gd" type="Script" id=8]
 [ext_resource path="res://scripts/MainMenuInterface/MainMenuSelectionPointer.gd" type="Script" id=9]
+[ext_resource path="res://sprites/Main Scene Objects/Main Menu.png" type="Texture" id=10]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -151,15 +152,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Main Menu" type="Sprite" parent="CanvasLayer/UI"]
+position = Vector2( 512, 298 )
+scale = Vector2( 8, 4.71875 )
+texture = ExtResource( 10 )
+
 [node name="AnimationSet" type="AnimationPlayer" parent="CanvasLayer/UI"]
 anims/FadeOut = SubResource( 3 )
-
-[node name="Panel" type="Panel" parent="CanvasLayer/UI"]
-margin_right = 1024.0
-margin_bottom = 592.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MenuItems" type="Control" parent="CanvasLayer/UI"]
 margin_right = 40.0

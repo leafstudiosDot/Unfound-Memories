@@ -22,7 +22,7 @@ func GenderChosen():
 	pass
 	
 func NextScene():
-	get_tree().change_scene("res://scenes/Home1.tscn")
+	get_tree().change_scene("res://scenes/prototype/DialogueIntro.tscn")
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
